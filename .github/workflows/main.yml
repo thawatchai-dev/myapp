@@ -1,0 +1,43 @@
+name: Deploy ReactJS to FTP
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Copy environment variables
+        run: cp .env.prod .env
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Deploy to FTP
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: build
+
+      - name: Setup FTP client
+        uses: ftpsync/ftp-deploy-action@master
+        with:
+          server: 27.254.86.109
+          username: iaocregi
+          password: (04CjsB)6X8wGt
+          remote-dir: /myapp
+          local-dir: build
+          exclude: .gitignore
+          dry-run: false
