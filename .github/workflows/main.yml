@@ -37,6 +37,7 @@ jobs:
           server: iaocregister.org
           username: iaocregi
           password: (04CjsB)6X8wGt
-          server-dir: /domains/iaocregister.org/public_html/
+          local-dir: ./dist/
+          server-dir: /domains/iaocregister.org/public_html/app1
           port: 2121
         
