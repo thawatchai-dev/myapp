@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Copy environment variables
-        run: cp .env.prod .env
+      # - name: Copy environment variables
+      #   run: cp .env.prod .env
 
       - name: Install dependencies
         run: npm install
