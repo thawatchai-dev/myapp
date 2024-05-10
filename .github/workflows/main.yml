@@ -37,8 +37,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "dist" # Replace with your local directory
-          remoteDir: ${{ secrets.FTP_REMOTE_DIR }} # Replace with your remote directory
-          local-dir: build
+          port: ${{ secrets.PORT }}
+          local-dir: "dist"
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
           exclude: .gitignore
           dry-run: false
