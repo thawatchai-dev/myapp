@@ -34,9 +34,9 @@ jobs:
       - name: Setup FTP client
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-          port: ${{ secrets.PORT }}
+          server: iaocregister.org
+          username: iaocregi
+          password: (04CjsB)6X8wGt
+          server-dir: /domains/iaocregister.org/public_html/
+          port: 2121
         
