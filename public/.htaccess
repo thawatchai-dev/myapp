@@ -1,13 +1,7 @@
 Options -MultiViews
 RewriteEngine On
 
-# Check if the requested path starts with "/app1/"
-RewriteCond %{REQUEST_URI} ^/app1/
-
-# If it does, rewrite all requests to index.html within the "/app1/" directory
-RewriteRule ^(.+)$ /app1/index.html [QSA,L]
-
-# Handle requests that don't start with "/app1/" (optional)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [QSA,L]
+RewriteCond %{REQUEST_URI} ^/app1/
+RewriteRule ^(.+)$ /app1/index.html [QSA,L]
