@@ -34,10 +34,11 @@ jobs:
       - name: Setup FTP client
         uses: ftpsync/ftp-deploy-action@master
         with:
-          server: 27.254.86.109
-          username: iaocregi
-          password: (04CjsB)6X8wGt
-          remote-dir: /myapp
+          server: ${{ MYAPP.FTP_SERVER }}
+          username: ${{ MYAPP.FTP_USERNAME }}
+          password: ${{ MYAPP.FTP_PASSWORD }}
+          localDir: "dist" # Replace with your local directory
+          remoteDir: ${{ MYAPP.FTP_REMOTE_DIR }} # Replace with your remote directory
           local-dir: build
           exclude: .gitignore
           dry-run: false
