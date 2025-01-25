@@ -1,6 +1,6 @@
 {
   "name": "myapp",
-  "homepage": "/app1/",
+  "homepage": "/app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
